@@ -1,0 +1,14 @@
+{
+  "name": "openvpn-registrator",
+  "version": "1.0.0",
+  "description": "Registers OpenVPN clients into Consul as services",
+  "main": "registrator.js",
+  "author": "Erik Kristensen <erik@erikkristensen.com>",
+  "license": "MIT",
+  "repository": "ekristen/openvpn-registrator",
+  "dependencies": {
+    "bunyan": "^1.8.0",
+    "consul": "^0.24.0",
+    "minimist": "^1.2.0"
+  }
+}

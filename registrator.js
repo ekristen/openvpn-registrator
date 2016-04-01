@@ -124,10 +124,12 @@ function handleStatus(err, status) {
 function registerClient(client) {
   var serviceName = 'openvpn-client:' + client.name
   consul.agent.service.list(function(err, services) {
+    logger.debug({services: services}, 'consul services')
+
     var serviceFound = false
     Object.keys(services).forEach(function(key) {
       var service = services[key]
-      if (service.Tags.indexOf('openvpn-registrator') !== -1 && service.Service == serviceName) {
+      if (typeof service['Tags'] !== 'undefined' && service.Tags.indexOf('openvpn-registrator') !== -1 && service.Service == serviceName) {
         serviceFound = true
       }
     })

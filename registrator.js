@@ -129,7 +129,7 @@ function registerClient(client) {
     var serviceFound = false
     Object.keys(services).forEach(function(key) {
       var service = services[key]
-      if (typeof service['Tags'] != null && service.Tags.indexOf('openvpn-registrator') !== -1 && service.Service == serviceName) {
+      if (service['Tags'] != null && service.Tags.indexOf('openvpn-registrator') !== -1 && service.Service == serviceName) {
         serviceFound = true
       }
     })
